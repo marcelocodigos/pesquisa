@@ -43,6 +43,11 @@
     padding: 10px;
     text-align: center;
 }
+.inciar-pesquisa p{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6rem;
+}
 header img{
     width: 100px;
 }
@@ -54,6 +59,13 @@ header img{
     background-color:#056AD9 ;
     color: white;
     border-radius: 16px;
+    box-shadow: none;
+    transition: 300ms;
+    cursor: pointer;
+}
+.inciar-pesquisa button:hover{
+    box-shadow: 1px 1px .3rem .1rem #777777;
+    background-color: #0453a8;
 }
 footer{
     text-align: center;
