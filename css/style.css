@@ -95,3 +95,31 @@ footer{
     margin-top: 5px;
     margin-bottom: 20px;
 }
+.etapa-3-perguntas{
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ width: 90vw;
+}
+.etapa-3-perguntas button{
+    background-color: #7fbdff;
+}
+.etapa-3-perguntas button:hover{
+    background-color: #0b54a3;
+}
+.etapa-3-perguntas button:{
+    background-color: #7fbdff;
+}
+.selected{
+    box-shadow: 1px 1px .3rem .1rem #777777 !important;
+    background-color: #0453a8;
+    outline: 3px soid gray !important;
+    background-color: #0453a8 !important;
+}
+.btn-texto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}

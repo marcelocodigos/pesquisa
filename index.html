@@ -50,7 +50,7 @@
                                   Carregando instrutor ....
                                 </option>
                             </select>
-                            <button type="button" id="etapa-2 remove">Continuar </button>
+                            <button type="button" id="etapa-2-btn" onclick="continuarEtapa2()">Continuar </button>
                         </form>
                         
                         <b>Tempo estimado : 4 minutos</b>
@@ -58,11 +58,28 @@
                     <footer>
                       <b>Pode preencher tranquilamente! 
                         Seus dados são confidenciais e acessíveis apenas ao Diretor de Ensino</b>
-                    </footer>
-                    
+                    </footer> 
                     <script src="scripts/script.js"></script>
          </section>
          <!--Fim Formulario Etapa 2 -->
+         <!--Etapa 3 Perguntas Etapa 3-->
+         <section class="etapa-3 remove inciar-pesquisa">
+            <div class="etapa-3-perguntas">
+                <p id="perguntaAtual">
+                   carregando pergunta ...
+                </p>
+                <button class="selected">Totalmente Satisfeito</button>
+                <button>Satisfeito</button>
+                <button>Insatisfeito</button>
+                <button>Totalmente Insatisfeito</button>
+                <div class="btn-texto">
+                    <p id="texto-pergunta-atual">caregando paginacao .. </p>
+                    <button type="button"> Próxima Pergunta </button>
+                </div>
+                </div>
+            </div>
+         </section>
+          <!--Fim Etapa 3 Perguntas Etapa 3-->
     </main>
     
 </body>
