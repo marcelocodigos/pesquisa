@@ -29,6 +29,7 @@ let instrutoresPerguntas = {
         }));
   
         console.log(instrutoresPerguntas);
+        popularSelectInstrutores()
       })
       .catch(error => {
         console.error('Erro ao obter dados:', error.message);
@@ -38,3 +39,20 @@ let instrutoresPerguntas = {
   // Chamar a função para buscar os dados e preencher o objeto
   fetchData();
   
+// Função para popular o select com instrutores ativos
+function popularSelectInstrutores() {
+    const selectInstrutor = document.getElementById("selectInstrutores");
+    selectInstrutor.innerHTML = "";
+  
+    for (let i = 0; i < instrutoresPerguntas.instrutores.length; i++) {
+      if (instrutoresPerguntas.instrutores[i].acao === 'Ativo') {
+        const nome = instrutoresPerguntas.instrutores[i].nome;
+        const option = document.createElement("option");
+        option.value = nome; // valor da opção é o nome do instrutor
+        option.text = nome;  // texto visível na opção é também o nome do instrutor
+        selectInstrutor.appendChild(option);
+      }
+    }
+  }
+
+
