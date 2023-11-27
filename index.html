@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliacao Alto Escola ALMA</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/api.js"></script>
 </head>
 <body>
     <main class="container">
         <!--Iniciar Pesquisa-->
-         <section class="etapa-1 item">
+         <section class="etapa-1 item ">
             <header class="cabecalho">
                <h3>Avalie e Transforme</h3>
                <p>
@@ -30,6 +31,38 @@
             </footer>
          </section>
         <!--Fim Iniciar Pesquisa-->
+
+         <!--Formulario Etapa 2-->
+         <section class="etapa-2 item  remove">
+                    <header class="cabecalho">
+                       <h3>Avalie e Transforme</h3>
+                       <p>
+                        <img src="images/logo.png" alt="Auto Escola Alma">
+                       </p>
+                       
+                    </header>
+                    <section class="inciar-pesquisa">
+                        <form>
+                            <input type="text" placeholder="Seu nome: " required >
+                            <input type="tel" placeholder="Seu Telefone: (xx) xxxxx-xxxx" required>
+                            <select>
+                                <option value="">
+                                   Selecione o Seu Instrutor
+                                </option>
+                            </select>
+                            <button type="button" id="etapa-2 remove">Continuar </button>
+                        </form>
+                        
+                        <b>Tempo estimado : 4 minutos</b>
+                    </section>
+                    <footer>
+                      <b>Pode preencher tranquilamente! 
+                        Seus dados são confidenciais e acessíveis apenas ao Diretor de Ensino</b>
+                    </footer>
+                    
+                    <script src="scripts/script.js"></script>
+         </section>
+         <!--Fim Formulario Etapa 2 -->
     </main>
     
 </body>

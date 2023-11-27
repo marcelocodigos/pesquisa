@@ -5,6 +5,9 @@
  box-sizing: border-box;
  font-family:"Nunito",sans-serif;
 }
+.remove{
+    display: none !important;
+}
 
 
 .container{
@@ -64,6 +67,23 @@ header img{
     box-shadow: none;
     transition: 300ms;
     cursor: pointer;
+}
+.inciar-pesquisa form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.inciar-pesquisa form input,select {
+ padding: 10px;
+ border-radius: 20px;
+ border:0.1em solid gray;
+ outline:none;
+}
+.inciar-pesquisa form input:hover{
+    outline:0.1rem solid #056AD9;
+}
+.inciar-pesquisa form select:hover{
+    outline:0.1rem solid #056AD9;
 }
 .inciar-pesquisa button:hover{
     box-shadow: 1px 1px .3rem .1rem #777777;
