@@ -112,7 +112,7 @@ footer{
 }
 .selected{
     box-shadow: 1px 1px .3rem .1rem #777777 !important;
-    background-color: #0453a8;
+    
     outline: 3px soid gray !important;
     background-color: #0453a8 !important;
 }
