@@ -32,11 +32,44 @@ montaPerguntas=()=>{
     perguntaTEXT.textContent =`${instrutoresPerguntas.perguntas[perguntaAtual].pergunta}`;
     perguntaAtual++
     console.log(perguntaAtual)
+    var botoes = document.querySelectorAll(".keller");
+   
+    botoes.forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        // Remove a classe 'selected' de todos os botões
+        botoes.forEach(function (b) {
+          b.classList.remove('selected');
+        });
+  
+        // Adiciona a classe 'selected' apenas ao botão clicado
+        botao.classList.toggle('selected');
+      });
+  });
+  // Evento para avançar para a próxima pergunta
+var botaoProximaPergunta = document.querySelector('#proximaPergunta');
+
+botaoProximaPergunta.addEventListener('click', function() {
+    // Remove a classe 'selected' de todos os botões ao avançar para a próxima pergunta
+    botoes.forEach(function(b) {
+        b.classList.remove('selected');
+    });
+
+
+  });
+  
+
+
+
+
     if(perguntaAtual==instrutoresPerguntas.perguntas.length){
         perguntaFinal();
     }
    
 }
+
+
+
+  
 perguntaFinal=()=>{
     //perguntaAtualFinal
     
@@ -49,3 +82,21 @@ perguntaFinal=()=>{
     perguntaFinal.textContent =`${instrutoresPerguntas.perguntas[perguntaAtual-1].pergunta}`;
     
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.keller').forEach(function (botao) {
+    botao.addEventListener('click', function () {
+      // Remove a classe 'selected' de todos os botões
+      document.querySelectorAll('.keller').forEach(function (b) {
+        b.classList.remove('selected');
+      });
+
+      // Adiciona a classe 'selected' apenas ao botão clicado
+      botao.classList.add('selected');
+      
+      // Exibe no console o valor do botão clicado
+      console.log(botao.textContent);
+    });
+  });
+});
+
