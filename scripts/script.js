@@ -23,7 +23,7 @@ continuarEtapa2=()=>{
     }
     else if(telefoneVal.value=="")
     {
-      
+      alert("Por Favor, Digite o Seu Celular.")
     }
     else{
       const etapa2 = document.querySelector(".etapa-2");
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(botao.textContent);
       let valor= botao.getAttribute('data-value');
       respostas[perguntaAtual-1]=valor
-      console.log(respostas)
+      
       
 
     });
@@ -152,6 +152,7 @@ finalizar =()=>{
    etapa4.classList.toggle("remove");
    etapa5.classList.toggle("remove");
 
+   sendData(dadosUsuario,dadosEscalaKeller,perguntaFinalTextArea);
 
 
 }
