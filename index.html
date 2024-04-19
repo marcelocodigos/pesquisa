@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,10 +43,28 @@
                     </header>
                     <section class="inciar-pesquisa">
                         <form>
-                            <input type="text" placeholder="Seu nome: " required >
-                            <input type="tel" placeholder="Seu Telefone: (xx) xxxxx-xxxx" required>
+                            <input type="text" id="nomeAluno" placeholder="Seu nome:" required>
+                            <input maxlength="11"  type="text" id="telAluno" placeholder="xx.xxxxx-xxxx" required  onkeypress="return validarNumero(event)">
+                           <script>
+                            function validarNumero(event) {
+                              // Obtém o código da tecla digitada
+                              var charCode = event.which ? event.which : event.keyCode;
+                          
+                              // Permite apenas os dígitos de 0 a 9 (códigos de tecla 48 a 57)
+                              if (charCode < 48 || charCode > 57) {
+                                  // Se a tecla não for um número, impede a entrada
+                                  alert("Apenas números são permitidos...")
+                                  event.preventDefault();
+                                  return false;
+                              }
+                          
+                              // Se a tecla for um número, permite a entrada
+                              return true;
+                          }
+                          </script>
+                           
                             <select id="selectInstrutores">
-                                <option value="">
+                                <option value=´${nome}´ id="nomeInstrutor">
                                   Carregando instrutor ....
                                 </option>
                             </select>
@@ -68,14 +86,14 @@
                 <p id="perguntaAtual">
                    carregando pergunta ...
                 </p>
-                <button class="keller" data-value="totalmente-satisfeito">Totalmente Satisfeito</button>
-                <button class="keller" data-value="satisfeito">Satisfeito</button>
-                <button class="keller" data-value="insatisfeito">Insatisfeito</button>
-                <button class="keller" data-value="totalmente-insatisfeito">Totalmente Insatisfeito</button>
+                <button class="keller" data-value="5">Totalmente Satisfeito</button>
+                <button class="keller" data-value="4">Satisfeito</button>
+                <button class="keller" data-value="2">Insatisfeito</button>
+                <button class="keller" data-value="1">Totalmente Insatisfeito</button>
 
                 <div class="btn-texto">
                     <p id="texto-pergunta-atual">caregando paginacao .. </p>
-                    <button id="proximaPergunta" onclick=" montaPerguntas()"> Próxima Pergunta </button>
+                    <button id="proximaPergunta" onclick="montaPerguntas()"> Próxima Pergunta </button>
                 </div>
                 </div>
             </div>
@@ -86,11 +104,35 @@
             <p id="perguntaAtualFinal">
                 carregando pergunta ...
              </p>
-            <textarea name="final" id="" cols="30" rows="10" placeholder="Comente aqui oque você acha ou deixe vazio">
+             <br>
+             <h2>Não Obrigatório</h2>
+            <textarea id="final" name="final"
+             cols="30" rows="10" placeholder="Comente aqui oque você acha ou deixe vazio">
                 
-            </textarea><button type="button">Finalizar </button>
+            </textarea placeholder="Comente aqui oque você acha ou deixe vazio">
+            
+            <button type="button" id="finalizar" onclick="finalizar()">Finalizar </button>
           </section>
+
+          <section class="etapa-5 remove inciar-pesquisa">
+          
+            <h3 style="text-align: center; color:green;">Obrigado, <span  id="nomeAlunoOBG"></span></h3>
+            <p>
+              Agradecemos sua participação na pesquisa. <br>Suas respostas são essenciais para melhorar:
+               </p>
+               <ul id="pg-obrigado-lista">
+                <li>Paciência</li>
+                <li>Didática</li>
+                <li>Respeito</li>
+                <li>Comunicação</li>
+                <li>Recomendação</li>
+               </ul>
+               <h4>Suas contribuições são valiosas! <br>As mudanças beneficiam diretamente você, pois são baseadas em feedbacks verdadeiros.</h4>
+               <a href="https://autoescolaalma.com.br">Sair</a>          
+          </section>
+
+          
     </main>
-    
+  <!-- <script src="scripts/coletaDados.js"></script>  -->
 </body>
 </html>

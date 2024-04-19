@@ -136,3 +136,8 @@ textarea{
     padding: 8px;
     width: 100%;
 }
+#pg-obrigado-lista{
+    list-style: none;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
