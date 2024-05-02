@@ -1,6 +1,7 @@
 var dadosUsuario = {};
+
 var dadosEscalaKeller = {respostas};
-var perguntaTextoFinal =texto_final;
+
 
 // Função para coletar dados do usuário
 function coletarDados() {
@@ -13,9 +14,10 @@ function coletarDados() {
         telefone: telefone,
         instrutor: instrutor
     };
+    
     //coleta dados do array da pesquisa
     dadosEscalaKeller=respostas;
     console.log(dadosUsuario)
     console.log(dadosEscalaKeller)
-    console.log(perguntaTextoFinal)
+    console.log(text)
 }

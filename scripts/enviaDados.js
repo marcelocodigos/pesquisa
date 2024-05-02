@@ -1,5 +1,13 @@
   const sendData=(dadosUser,DadosKeller,respFinal)=>{
       repsotaFinnalFormatada = respFinal.trim(/\s+/g, '');
+     //calcula a media das notas do array perguntas
+      let somaMedia=(
+        Number(dadosEscalaKeller[0])+
+        Number(dadosEscalaKeller[1])+
+        Number(dadosEscalaKeller[2])+
+        Number(dadosEscalaKeller[3])+
+        Number(dadosEscalaKeller[4]))
+        let resultadoMedia=somaMedia/dadosEscalaKeller.length
       
       const data = {
         NomeInstrutor:dadosUser.instrutor,
@@ -11,7 +19,7 @@
         Relacionamento_Interpessoal:DadosKeller[3],
         Comunicacao: DadosKeller[4],
         Recomendacao:repsotaFinnalFormatada,
-       
+        Media:resultadoMedia,
         
        
     };

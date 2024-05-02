@@ -120,12 +120,16 @@ document.addEventListener('DOMContentLoaded', function () {
       respostas[perguntaAtual-1]=valor
       
       
+      
 
     });
   });
 });
 
 var dadosUsuario = {};
+    //valor máximo para as Notas, caso o usuario não responda, será atribuido 
+    //o valor máximo ao instruitor
+    respostas =[5,5,5,5,5]
 var dadosEscalaKeller = {respostas};
 
 finalizar =()=>{
@@ -142,8 +146,14 @@ finalizar =()=>{
     //coleta dados do array da pesquisa
     dadosEscalaKeller=respostas;
     console.log(dadosUsuario)
-    console.log(dadosEscalaKeller)
+    
     console.log(perguntaFinalTextArea)
+    for(let i=0; i<dadosEscalaKeller.length; i++){
+      if(dadosEscalaKeller[i]==null){
+        dadosEscalaKeller[i]="2.5";
+      }
+    }
+    console.log(dadosEscalaKeller)
     
    var nomeAlunoOBG= document.getElementById("nomeAlunoOBG");
    nomeAlunoOBG.textContent=dadosUsuario.nome;
