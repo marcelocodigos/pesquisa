@@ -1,8 +1,9 @@
 let instrutoresPerguntas = {
     instrutores: [],
-    perguntas: []
+    perguntas: [],
+    unidades:[]
   };
-  var url ="https://script.google.com/macros/s/AKfycbwl6MFYUQKY4eE94DbPrv1aKBwnqdmJ_5FgmKKcGl3JOZSMgcr4dl68EZLCAYTp4kMV/exec";
+  var url ="https://script.google.com/macros/s/AKfycbzwb3OImPhfdlWmCn-O50MYhrbZ9b39-W1e1FVf002J3eB81niQNzuR_K4QLSn37Yy9/exec";
   
   function fetchData() {
     fetch(url)
@@ -27,9 +28,17 @@ let instrutoresPerguntas = {
           pergunta: pergunta.pergunta,
           acao: pergunta.acao
         }));
+
+         // Preencher array de undiades no objeto instrutoresPerguntas
+         instrutoresPerguntas.unidades = data.unidades.map(unidades => ({
+          nomeUnidade: unidades.nomeUnidade,
+          situacaoUnidade: unidades.situacaoUnidade
+          
+        }));
   
         console.log(instrutoresPerguntas);
         popularSelectInstrutores()
+        popularSelectUnidades()
       })
       .catch(error => {
         console.error('Erro ao obter dados:', error.message);
@@ -51,6 +60,21 @@ function popularSelectInstrutores() {
         option.value = nome; // valor da opção é o nome do instrutor
         option.text = nome;  // texto visível na opção é também o nome do instrutor
         selectInstrutor.appendChild(option);
+      }
+    }
+  }
+  //popular select listando as unidades do objeto principal "instrutoresPerguntas"
+  popularSelectUnidades=()=>{
+    const selectUnidades = document.getElementById("selectUnidades");
+    selectUnidades.innerHTML = "";
+
+    for (let i = 0; i < instrutoresPerguntas.unidades.length; i++) {
+      if (instrutoresPerguntas.unidades[i].situacaoUnidade === 'ativo') {
+        const nomeUnidade = instrutoresPerguntas.unidades[i].nomeUnidade;
+        const option = document.createElement("option");
+        option.value = nomeUnidade; // valor da opção é o nome do instrutor
+        option.text = nomeUnidade;  // texto visível na opção é também o nome do instrutor
+        selectUnidades.appendChild(option);
       }
     }
   }
