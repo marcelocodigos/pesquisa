@@ -70,9 +70,10 @@
                             </select>
                             <!--Selecione sua unidade-->
                             <select id="selectUnidades">
-                               <option>Selecione Sua Unidade </option>
-                               <option value="Filial"> Filial </option>
-                               <option value="Matriz"> Matriz </option>
+                               <option value=´$nomeUnidade´>
+                                Carregando Unidades.. 
+                              </option>
+                               
                             </select>
                             <!--Fim selecione sua unidade-->
                             <button type="button" id="etapa-2-btn" onclick="continuarEtapa2()">Continuar </button>
@@ -113,11 +114,17 @@
              </p>
              <br>
              <h2>Não Obrigatório</h2>
-            <textarea id="final" name="final"
-             cols="20" rows="10" placeholder="Comente aqui oque você acha ou deixe vazio">
-                
-            </textarea>
+            <textarea id="final" name="final" placeholder="Comente aqui oque você acha ou deixe vazio"></textarea>
             
+            <p id="perguntaAtualFinal2">
+              carregando pergunta ...
+           </p>
+           <br>
+           <h2 style="color: red;">* Obrigatório</h2>
+          <textarea id="final2" name="final" placeholder="Comente aqui oque você do atendimento" required></textarea>
+
+
+
             <button type="button" id="finalizar" onclick="finalizar()">Finalizar </button>
           </section>
 

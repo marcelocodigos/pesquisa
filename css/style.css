@@ -205,3 +205,6 @@ body::after {
     opacity: 50%;
     font-size: 18px;
 }
+textarea{
+    margin-bottom: 30px;
+}

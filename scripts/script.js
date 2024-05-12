@@ -41,6 +41,8 @@ continuarEtapa2=()=>{
 montaPerguntas=()=>{
     
     var perguntaTEXT = document.querySelector("#perguntaAtual");
+    
+    
     var perguntaTEXTPaginacao = document.querySelector("#texto-pergunta-atual");
     perguntaTEXTPaginacao.textContent = `Pergunta ${perguntaAtual+1} de ${instrutoresPerguntas.perguntas.length}`;
     perguntaTEXT.textContent =`${instrutoresPerguntas.perguntas[perguntaAtual].pergunta}`;
@@ -78,7 +80,7 @@ botaoProximaPergunta.addEventListener('click', function() {
 
 
 
-    if(perguntaAtual==instrutoresPerguntas.perguntas.length){
+    if(perguntaAtual==instrutoresPerguntas.perguntas.length-1){
         perguntaFinal();
     }
    
@@ -96,8 +98,13 @@ perguntaFinal=()=>{
     etapa4.classList.toggle("remove");
 
     var perguntaFinal = document.getElementById("perguntaAtualFinal");
+    var perguntaFinal2 = document.getElementById("perguntaAtualFinal2");
+
     perguntaFinal.textContent =`${instrutoresPerguntas.perguntas[perguntaAtual-1].pergunta}`;
-  var texto_final= document.getElementById("final").value;
+    var texto_final= document.getElementById("final").value;
+
+    perguntaFinal2.textContent =`${instrutoresPerguntas.perguntas[perguntaAtual].pergunta}`;
+    var texto_final2= document.getElementById("final2").value;
  
  
 }
@@ -129,19 +136,28 @@ document.addEventListener('DOMContentLoaded', function () {
 var dadosUsuario = {};
     //valor máximo para as Notas, caso o usuario não responda, será atribuido 
     //o valor máximo ao instruitor
-    respostas =[5,5,5,5,5]
+    respostas =[5,5,5,5,5,5]
 var dadosEscalaKeller = {respostas};
 
 finalizar =()=>{
+  const textArea2=document.getElementById("final2").value;
+  if(textArea2==""){
+    alert("Por favor preencha o Campo sinalizado com '*' ")
+  }else{
+
+  
     var nome = document.getElementById('nomeAluno').value;
     var telefone = document.getElementById('telAluno').value;
     var instrutor = document.getElementById('selectInstrutores').value;
+    var unidade =  document.getElementById('selectUnidades').value;
     var perguntaFinalTextArea = document.getElementById("final").value;
+    var recepcao = document.getElementById("final2").value;
 
     dadosUsuario = {
         nome: nome,
         telefone: telefone,
-        instrutor: instrutor
+        instrutor: instrutor,
+        unidade:unidade
     };
     //coleta dados do array da pesquisa
     dadosEscalaKeller=respostas;
@@ -162,9 +178,34 @@ finalizar =()=>{
    etapa4.classList.toggle("remove");
    etapa5.classList.toggle("remove");
 
-   sendData(dadosUsuario,dadosEscalaKeller,perguntaFinalTextArea);
+   //retorna a hora do post 
+   // Obtém a data e hora atuais
+let dataHoraAtual = new Date();
+
+// Obtém os componentes da data
+let dia = dataHoraAtual.getDate();
+let mes = dataHoraAtual.getMonth() + 1; // Os meses são indexados a partir de 0 (janeiro é 0)
+let ano = dataHoraAtual.getFullYear();
+
+// Obtém os componentes da hora
+let horas = dataHoraAtual.getHours();
+let minutos = dataHoraAtual.getMinutes();
+let segundos = dataHoraAtual.getSeconds();
+
+// Formata a data e hora
+let dataFormatada = `${dia}/${mes}/${ano}`;
+let horaFormatada = `${horas}:${minutos}:${segundos}`;
+
+// Combina a data e hora formatadas
+let dataHoraFormatada = `${dataFormatada} ${horaFormatada}`;
+
+console.log(dataHoraFormatada);
 
 
+   //enviar os dados para a função que faz o post via API dbShett
+   sendData(dadosUsuario,dadosEscalaKeller,perguntaFinalTextArea,dataHoraFormatada,recepcao);
+
+  }
 }
 
 

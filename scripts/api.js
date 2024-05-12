@@ -3,7 +3,7 @@ let instrutoresPerguntas = {
     perguntas: [],
     unidades:[]
   };
-  var url ="https://script.google.com/macros/s/AKfycbzwb3OImPhfdlWmCn-O50MYhrbZ9b39-W1e1FVf002J3eB81niQNzuR_K4QLSn37Yy9/exec";
+  var url ="https://script.google.com/macros/s/AKfycbxWquIlOZCxR1_AqbPNZgemrD60SrsuLBpKAG6xn8RFms31LmcEr8A8o0xCN4tM60za/exec";
   
   function fetchData() {
     fetch(url)
@@ -26,7 +26,8 @@ let instrutoresPerguntas = {
         instrutoresPerguntas.perguntas = data.perguntas.map(pergunta => ({
           tema: pergunta.tema,
           pergunta: pergunta.pergunta,
-          acao: pergunta.acao
+          acao: pergunta.acao,
+          tipo:pergunta.tipo
         }));
 
          // Preencher array de undiades no objeto instrutoresPerguntas

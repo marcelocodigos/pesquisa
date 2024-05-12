@@ -1,5 +1,5 @@
-  const sendData=(dadosUser,DadosKeller,respFinal)=>{
-      repsotaFinnalFormatada = respFinal.trim(/\s+/g, '');
+   sendData=(dadosUser,DadosKeller,respFinal,dataAtual,recepcao)=>{
+      respostaFinalFormatada = respFinal.trim(/\s+/g, '');
      //calcula a media das notas do array perguntas
       let somaMedia=(
         Number(dadosEscalaKeller[0])+
@@ -13,13 +13,16 @@
         NomeInstrutor:dadosUser.instrutor,
         NomeAluno: dadosUser.nome,
         Telefone: dadosUser.telefone,
+        Unidade:dadosUser.unidade,
         Paciencia:DadosKeller[0],
         Didatica: DadosKeller[1],
         Respeito: DadosKeller[2],
         Relacionamento_Interpessoal:DadosKeller[3],
         Comunicacao: DadosKeller[4],
-        Recomendacao:repsotaFinnalFormatada,
+        Recomendacao:respostaFinalFormatada,
+        Avaliacao_Recepcao:recepcao,  
         Media:resultadoMedia,
+        Data_Atual:dataAtual
         
        
     };

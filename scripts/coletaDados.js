@@ -8,12 +8,15 @@ function coletarDados() {
     var nome = document.getElementById('nomeAluno').value;
     var telefone = document.getElementById('telAluno').value;
     var instrutor = document.getElementById('selectInstrutores').value;
+    var unidade = document.getElementById('selectUnidades').value;
 
     dadosUsuario = {
         nome: nome,
         telefone: telefone,
-        instrutor: instrutor
+        instrutor: instrutor,
+        unidade:unidade
     };
+
     
     //coleta dados do array da pesquisa
     dadosEscalaKeller=respostas;
