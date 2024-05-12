@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliacao Alto Escola ALMA</title>
+    <title>Avaliacao Auto Escola ALMA</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/api.js"></script>
 </head>
@@ -44,7 +44,7 @@
                     <section class="inciar-pesquisa">
                         <form>
                             <input type="text" id="nomeAluno" placeholder="Seu nome:" required>
-                            <input maxlength="11"  type="text" id="telAluno" placeholder="xx.xxxxx-xxxx" required  onkeypress="return validarNumero(event)">
+                            <input maxlength="11"  type="tel" id="telAluno" placeholder="xx.xxxxx-xxxx" required  onkeypress="return validarNumero(event)">
                            <script>
                             function validarNumero(event) {
                               // Obtém o código da tecla digitada
@@ -68,6 +68,13 @@
                                   Carregando instrutor ....
                                 </option>
                             </select>
+                            <!--Selecione sua unidade-->
+                            <select id="selectUnidades">
+                               <option>Selecione Sua Unidade </option>
+                               <option value="Filial"> Filial </option>
+                               <option value="Matriz"> Matriz </option>
+                            </select>
+                            <!--Fim selecione sua unidade-->
                             <button type="button" id="etapa-2-btn" onclick="continuarEtapa2()">Continuar </button>
                         </form>
                         
@@ -107,9 +114,9 @@
              <br>
              <h2>Não Obrigatório</h2>
             <textarea id="final" name="final"
-             cols="30" rows="10" placeholder="Comente aqui oque você acha ou deixe vazio">
+             cols="20" rows="10" placeholder="Comente aqui oque você acha ou deixe vazio">
                 
-            </textarea placeholder="Comente aqui oque você acha ou deixe vazio">
+            </textarea>
             
             <button type="button" id="finalizar" onclick="finalizar()">Finalizar </button>
           </section>
@@ -134,5 +141,6 @@
           
     </main>
 <script src="scripts/enviaDados.js"></script> 
+<footer>By - <a href="https://wa.me/5511965878332">Marcelo Ferreira</a> </footer>
 </body>
 </html>

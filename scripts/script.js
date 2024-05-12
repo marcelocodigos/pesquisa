@@ -1,4 +1,4 @@
-var respostas=[null,null,null,null,null];
+var respostas=[5,5,5,5,5];
 
 document.getElementById("etapa-1").addEventListener("click",function(){
  

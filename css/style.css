@@ -44,14 +44,21 @@
     background-color: #E9F3FF;
     border-radius: 20px;
     padding: 10px;
+    width: 70Vw;
     text-align: center;
     border: none;
     box-shadow:0px 0px 0.4rem .07rem gray;
+    padding-bottom:20px;
+    padding-top: 20px;
+}
+.inciar-pesquisa b{
+    margin-top: 20px;
 }
 .inciar-pesquisa p{
     font-size: 18px;
     font-weight: 600;
     line-height: 1.6rem;
+ 
 }
 header img{
     width: 100px;
@@ -72,12 +79,48 @@ header img{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width:60%;
+
 }
+@media screen and (max-width: 630px) {
+    
+    .inciar-pesquisa form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width:90%;
+    
+    }
+}
+@media screen and (max-width: 500px) {
+    .btn-texto{
+     
+        flex-wrap: wrap;
+        
+    }
+    #texto-pergunta-atual{
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 14px;
+
+    }
+   #proximaPergunta{
+    width: 100%;
+    color: rgb(63, 63, 63);
+   font-weight: 800;
+   font-size: 18px;
+   }
+   #proximaPergunta:hover{
+    color: white;
+   }
+}
+
 .inciar-pesquisa form input,select {
  padding: 10px;
  border-radius: 20px;
  border:0.1em solid gray;
  outline:none;
+
 }
 .inciar-pesquisa form input:hover{
     outline:0.1rem solid #056AD9;
@@ -99,7 +142,7 @@ footer{
  display: flex;
  flex-direction: column;
  gap: 20px;
- width: 90vw;
+ width:89%;
 }
 .etapa-3-perguntas button{
     background-color: #7fbdff;
@@ -140,4 +183,28 @@ textarea{
     list-style: none;
     font-size: 18px;
     padding-bottom: 10px;
+}
+body {
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../images/fachada-auto-escola-alma-1-768x1024.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(70%); /* Ajuste o valor para alterar o brilho da imagem */
+    z-index: -1; /* Para garantir que o pseudo-elemento esteja atrás de todos os outros elementos */
+}
+.etapa-4 h2{
+    opacity: 50%;
+    font-size: 18px;
+}
+.etapa-4{
+    width: 70%;
 }
