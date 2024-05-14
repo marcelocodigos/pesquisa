@@ -208,3 +208,11 @@ body::after {
 textarea{
     margin-bottom: 30px;
 }
+.textos{
+    color:white;
+    text-shadow: 1px 1px 1px 1px black;
+}
+.logo{
+    border-radius: 30%;
+
+}
